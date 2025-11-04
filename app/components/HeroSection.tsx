@@ -23,13 +23,13 @@ export default function HeroSection() {
       {/* Left Side - Content */}
       <div className="relative z-10 w-full md:w-1/2 lg:w-2/5 px-6 sm:px-8 lg:px-12 xl:px-20">
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight tracking-tight mb-4 drop-shadow-2xl">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight mb-4 drop-shadow-2xl">
           Up-Side Down: BATTLEGROUNDS
         </h1>
 
         {/* Tagline */}
         <div className="mb-8">
-          <p className="text-yellow-400 text-lg sm:text-xl lg:text-2xl font-bold tracking-widest uppercase">
+          <p className="text-blue-400 text-lg sm:text-xl lg:text-2xl font-bold tracking-widest uppercase">
             LAND, LOOT, SURVIVE!
           </p>
           <p className="text-white text-base sm:text-lg font-medium mt-2">
@@ -53,7 +53,7 @@ export default function HeroSection() {
               <div className="w-8 h-8 bg-white/20 rounded flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-black text-xs">{platform.icon}</span>
               </div>
-              <span className="text-white font-bold text-sm group-hover:text-yellow-300 transition-colors">
+              <span className="text-white font-bold text-sm group-hover:text-blue-400 transition-colors">
                 {platform.name}
               </span>
             </button>

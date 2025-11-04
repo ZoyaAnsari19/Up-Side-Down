@@ -47,7 +47,7 @@ export default function AttractiveFooter() {
   ];
 
   return (
-    <footer className="w-full relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+    <footer className="w-full relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden" id="contact">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
         <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500 rounded-full blur-3xl" />

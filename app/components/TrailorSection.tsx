@@ -31,7 +31,7 @@ export default function LatestGamesSection() {
       category: 'Games / Action Adventure',
       description: 'Return to the Wild West in this epic tale of outlaws and redemption. Experience stunning landscapes and immersive gameplay.',
       releaseDate: 'Coming 2026',
-      videoUrl: '/video/ups-trailer2.mp4',
+      videoUrl: '/video/ups-trailer.mp4',
       thumbnail: '/img/img3.png',
       platforms: ['PS5', 'Xbox Series X|S', 'PC']
     }
@@ -40,7 +40,7 @@ export default function LatestGamesSection() {
   const [activeGame, setActiveGame] = useState(0);
 
   return (
-    <section className="relative min-h-screen bg-black py-20">
+    <section className="relative min-h-screen bg-black py-20" id='trailer'>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="mb-12">
@@ -85,14 +85,14 @@ export default function LatestGamesSection() {
             </p>
 
             {/* Release Date */}
-            <div className="flex items-center gap-2 text-yellow-400 font-semibold mb-6">
+            <div className="flex items-center gap-2 text-blue-400 font-semibold mb-6">
               <Calendar className="w-5 h-5" />
               <span>{games[activeGame].releaseDate}</span>
             </div>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-6">
-              <button className="flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:bg-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <Play className="w-5 h-5 fill-current" />
                 Watch Trailer
               </button>
@@ -125,7 +125,7 @@ export default function LatestGamesSection() {
               key={game.id}
               onClick={() => setActiveGame(index)}
               className={`relative rounded-xl overflow-hidden border-2 transition-all duration-300 ${activeGame === index
-                ? 'border-yellow-400 shadow-lg shadow-yellow-400/20'
+                ? 'border-blue-400 shadow-lg shadow-purple-400/20'
                 : 'border-gray-700 hover:border-gray-500'
                 }`}
             >
@@ -143,7 +143,7 @@ export default function LatestGamesSection() {
                   <h4 className="text-white font-bold text-lg line-clamp-2">
                     {game.title}
                   </h4>
-                  <p className="text-yellow-400 text-sm font-semibold mt-1">
+                  <p className="text-blue-400 text-sm font-semibold mt-1">
                     {game.releaseDate}
                   </p>
                 </div>
