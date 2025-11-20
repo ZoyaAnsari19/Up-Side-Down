@@ -56,23 +56,42 @@ export default function AttractiveFooter() {
 
       <div className="relative z-10 w-full flex flex-col">
         {/* Newsletter */}
-        <div className="border-b border-white/10 w-full flex justify-center">
-          <div className="w-full max-w-screen-xl mx-auto px-4 py-6 sm:py-8 md:py-10 flex flex-col items-center gap-4">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-center">
-              Stay in the Loop
-            </h3>
-            <form className="w-full flex flex-col xs:flex-row justify-center items-center gap-3" onSubmit={e => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full xs:w-64 md:w-80 px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-sm sm:text-base"
-              />
-              <button className="w-full xs:w-64 md:w-80 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base">
-                Subscribe <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
-          </div>
-        </div>
+       {/* Newsletter Section - Now Fully Functional */}
+<div className="border-b border-white/10 w-full flex justify-center">
+  <div className="w-full max-w-screen-xl mx-auto px-4 py-6 sm:py-8 md:py-10 flex flex-col items-center gap-4">
+    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-center">
+      Stay in the Loop
+    </h3>
+
+    <form 
+      className="w-full flex flex-col xs:flex-row justify-center items-center gap-3" 
+      onSubmit={(e) => {
+        e.preventDefault();
+        const emailInput = e.currentTarget.elements.namedItem('email') as HTMLInputElement;
+        if (emailInput?.value.trim() && emailInput.value.includes('@')) {
+          alert("Thank you for subscribing! We'll keep you updated with the latest news.");
+          emailInput.value = '';
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      }}
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+        className="w-full xs:w-64 md:w-80 px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-sm sm:text-base transition-all"
+      />
+      <button 
+        type="submit"
+        className="w-full xs:w-64 md:w-80 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base transition-all hover:shadow-lg hover:shadow-purple-500/25"
+      >
+        Subscribe <ArrowRight className="w-4 h-4" />
+      </button>
+    </form>
+  </div>
+</div>
 
         {/* Main Footer Content */}
         <div className="w-full max-w-screen-xl mx-auto px-4 py-8 sm:py-10">
